@@ -1,0 +1,75 @@
+-- general
+
+lvim.format_on_save = true
+lvim.lint_on_save = true
+lvim.colorscheme = "tokyonight"
+vim.opt.wrap = true
+vim.opt.timeoutlen = 100
+
+-- keymappings
+lvim.leader = "space"
+
+-- TODO: User Config for predefined plugins
+-- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+lvim.builtin.gitsigns.active = true
+lvim.builtin.dashboard.active = true
+lvim.builtin.terminal.active = true
+lvim.builtin.nvimtree.side = "left"
+lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.hide_dotfiles = false
+
+-- if you don't want all the parsers change this to a table of the ones you want
+lvim.builtin.treesitter.ensure_installed = "maintained"
+lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.treesitter.matchup.enable = true
+
+-- Language Settings
+require("languages.python")
+require("languages.javascript")
+require("languages.lua")
+require("languages.rust")
+require("languages.json")
+require("languages.c_c++")
+require("languages.html")
+
+--LSP
+
+lvim.lsp.diagnostics.virtual_text = true
+
+-- Additional Plugins
+lvim.plugins = {
+	require("plugins.tokyo"),
+	require("plugins.lsp_signature"),
+	require("plugins.neoscroll"),
+	require("plugins.colorizer"),
+	require("plugins.vim_matchup"),
+	require("plugins.rust_tools"),
+	require("plugins.trouble"),
+	require("plugins.markdown_preview"),
+	require("plugins.hop"),
+}
+
+lvim.builtin.which_key.mappings["t"] = {
+	name = "Diagnostics",
+	t = { "<cmd>TroubleToggle<cr>", "trouble" },
+	w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace" },
+	d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document" },
+	q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+	l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+	r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+}
+
+-- vim.cmd([[
+-- " WSL yank support
+-- let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+-- if executable(s:clip)
+--     augroup WSLYank
+--         autocmd!
+--         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+--     augroup END
+-- endif
+-- ]])
+
+-- Autocommands (https://neovim.io/doc/user/autocmd.html)
+-- lvim.autocommands = {{ "BufWinEnter", "*", "echo \"hi again\""}}
