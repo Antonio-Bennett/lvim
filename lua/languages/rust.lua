@@ -1,5 +1,1 @@
-lvim.lang.rust.formatters = {
-	{
-		exe = "rustfmt",
-	},
-}
+lvim.lang.rust.formatters = { { exe = "rustfmt" } }

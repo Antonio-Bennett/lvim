@@ -1,6 +1,1 @@
-lvim.lang.html.formatters = {
-	{
-		exe = "prettierd",
-		args = { "$FILENAME" },
-	},
-}
+lvim.lang.html.formatters = { { exe = "prettierd" } }

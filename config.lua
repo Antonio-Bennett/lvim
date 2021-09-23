@@ -48,7 +48,10 @@ lvim.plugins = {
 	require("plugins.trouble"),
 	require("plugins.markdown_preview"),
 	require("plugins.hop"),
+	require("plugins.octo"),
 }
+
+-- WHICH KEY MAPPINGS
 
 lvim.builtin.which_key.mappings["t"] = {
 	name = "Diagnostics",
@@ -60,8 +63,11 @@ lvim.builtin.which_key.mappings["t"] = {
 	r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
 }
 
--- vim.cmd([[
+lvim.builtin.which_key.mappings["c"] = nil
+lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
+
 -- " WSL yank support
+-- vim.cmd([[
 -- let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
 -- if executable(s:clip)
 --     augroup WSLYank

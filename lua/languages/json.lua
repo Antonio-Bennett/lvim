@@ -1,6 +1,1 @@
-lvim.lang.json.formatters = {
-	{
-		exe = "prettierd",
-		args = { "$FILENAME" },
-	},
-}
+lvim.lang.json.formatters = { { exe = "prettierd" } }
