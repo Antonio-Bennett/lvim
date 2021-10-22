@@ -5,6 +5,7 @@ lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight"
 vim.opt.wrap = true
 vim.opt.timeoutlen = 100
+lvim.log.level = "debug"
 
 -- keymappings
 lvim.leader = "space"
@@ -20,22 +21,24 @@ lvim.builtin.nvimtree.hide_dotfiles = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
--- lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.matchup.enable = true
 
--- Language Settings
-require("languages.python")
-require("languages.javascript")
-require("languages.lua")
-require("languages.rust")
-require("languages.json")
-require("languages.c_c++")
-require("languages.html")
+-- Formatters
+require("format.black")
+require("format.clang_format")
+require("format.prettierd")
+require("format.rustfmt")
+require("format.stylua")
+
+--Linters
+require("lint.eslint_d")
+require("lint.flake8")
+require("lint.selene")
 
 --LSP
-
-lvim.lsp.diagnostics.virtual_text = true
+require("lsp-config.general")
+require("lsp-config.tailwindcss")
 
 -- Additional Plugins
 lvim.plugins = {
@@ -65,17 +68,6 @@ lvim.builtin.which_key.mappings["t"] = {
 
 lvim.builtin.which_key.mappings["c"] = nil
 lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
-
--- " WSL yank support
--- vim.cmd([[
--- let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
--- if executable(s:clip)
---     augroup WSLYank
---         autocmd!
---         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
---     augroup END
--- endif
--- ]])
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands = {{ "BufWinEnter", "*", "echo \"hi again\""}}
