@@ -5,7 +5,7 @@ lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight"
 vim.opt.wrap = true
 vim.opt.timeoutlen = 100
-lvim.log.level = "debug"
+-- lvim.log.level = "debug"
 
 -- keymappings
 lvim.leader = "space"
@@ -25,16 +25,16 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.matchup.enable = true
 
 -- Formatters
-require("format.black")
+-- require("format.black")
 require("format.clang_format")
-require("format.prettierd")
-require("format.rustfmt")
-require("format.stylua")
+-- require("format.prettierd")
+-- require("format.rustfmt")
+-- require("format.stylua")
 
 --Linters
-require("lint.eslint_d")
-require("lint.flake8")
-require("lint.selene")
+-- require("lint.eslint_d")
+-- require("lint.flake8")
+-- require("lint.selene")
 
 --LSP
 require("lsp-config.general")
