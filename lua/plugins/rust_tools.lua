@@ -1,4 +1,4 @@
-lvim.lsp.override = { "rust" }
+vim.list_extend(lvim.lsp.override, {"rust"})
 local M = {
 	"simrat39/rust-tools.nvim",
 	config = function()

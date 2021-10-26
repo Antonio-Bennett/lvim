@@ -5,7 +5,7 @@ lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight"
 vim.opt.wrap = true
 vim.opt.timeoutlen = 100
-lvim.log.level = "debug"
+-- lvim.log.level = "debug"
 
 -- keymappings
 lvim.leader = "space"
@@ -18,6 +18,7 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.nvimtree.hide_dotfiles = false
+lvim.builtin.notify.active = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -27,11 +28,13 @@ lvim.builtin.treesitter.matchup.enable = true
 -- Formatters
 require("format.black")
 require("format.clang_format")
+require("format.gofmt")
 require("format.prettierd")
 require("format.rustfmt")
 require("format.stylua")
 
 --Linters
+require("lint.cppcheck")
 require("lint.eslint_d")
 require("lint.flake8")
 require("lint.selene")
