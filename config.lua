@@ -50,7 +50,7 @@ lvim.plugins = {
 	require("plugins.neoscroll"),
 	require("plugins.colorizer"),
 	require("plugins.vim_matchup"),
-	require("plugins.rust_tools"),
+	-- require("plugins.rust_tools"),
 	require("plugins.trouble"),
 	require("plugins.markdown_preview"),
 	require("plugins.hop"),
