@@ -50,11 +50,11 @@ lvim.plugins = {
 	require("plugins.neoscroll"),
 	require("plugins.colorizer"),
 	require("plugins.vim_matchup"),
-	-- require("plugins.rust_tools"),
 	require("plugins.trouble"),
 	require("plugins.markdown_preview"),
 	require("plugins.hop"),
 	require("plugins.octo"),
+	require("plugins.todo_comments"),
 }
 
 -- WHICH KEY MAPPINGS
@@ -67,6 +67,15 @@ lvim.builtin.which_key.mappings["t"] = {
 	q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
 	l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
 	r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+	c = { "<cmd>TodoTrouble<cr>", "todo" },
+}
+
+lvim.builtin.which_key.mappings["n"] = {
+	name = "notes",
+	p = { ":lua require('workbench').toggle_project_workbench()<CR>", "project bench" },
+	b = { ":lua require('workbench').toggle_branch_workbench()<CR>", "branch bench" },
+	c = { "<Plug>WorkbenchAddCheckbox", "add checkbox" },
+	t = { "<Plug>WorkbenchToggleCheckbox", "toggle checkbox" },
 }
 
 lvim.builtin.which_key.mappings["c"] = nil
