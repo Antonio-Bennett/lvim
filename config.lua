@@ -53,6 +53,7 @@ lvim.plugins = {
 	require("plugins.markdown_preview"),
 	require("plugins.hop"),
 	require("plugins.octo"),
+  require("plugins.iswap")
 }
 
 -- WHICH KEY MAPPINGS
