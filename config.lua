@@ -17,8 +17,9 @@ lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
-lvim.builtin.nvimtree.hide_dotfiles = false
+lvim.builtin.nvimtree.setup.filters.dotfiles = false
 lvim.builtin.notify.active = true
+lvim.builtin.treesitter.context_commentstring.enable = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -42,6 +43,7 @@ require("lint.selene")
 --LSP
 require("lsp-config.general")
 require("lsp-config.tailwindcss")
+vim.list_extend(lvim.lsp.override, { "rust_analyzer" })
 
 -- Additional Plugins
 lvim.plugins = {
@@ -55,6 +57,7 @@ lvim.plugins = {
 	require("plugins.hop"),
 	require("plugins.octo"),
 	require("plugins.todo_comments"),
+	require("plugins.rust_tools"),
 }
 
 -- WHICH KEY MAPPINGS
@@ -68,14 +71,6 @@ lvim.builtin.which_key.mappings["t"] = {
 	l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
 	r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
 	c = { "<cmd>TodoTrouble<cr>", "todo" },
-}
-
-lvim.builtin.which_key.mappings["n"] = {
-	name = "notes",
-	p = { ":lua require('workbench').toggle_project_workbench()<CR>", "project bench" },
-	b = { ":lua require('workbench').toggle_branch_workbench()<CR>", "branch bench" },
-	c = { "<Plug>WorkbenchAddCheckbox", "add checkbox" },
-	t = { "<Plug>WorkbenchToggleCheckbox", "toggle checkbox" },
 }
 
 lvim.builtin.which_key.mappings["c"] = nil

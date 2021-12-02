@@ -16,7 +16,7 @@ formatters.setup({
 			"html",
 			"json",
 			"yaml",
-			"markdown",
+			-- "markdown",
 			"graphql",
 		},
 	},
