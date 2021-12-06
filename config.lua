@@ -76,5 +76,6 @@ lvim.builtin.which_key.mappings["t"] = {
 lvim.builtin.which_key.mappings["c"] = nil
 lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
 
+lvim.builtin.terminal.execs = { { "gitui", "gg", "Git Ui" } }
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands = {{ "BufWinEnter", "*", "echo \"hi again\""}}
