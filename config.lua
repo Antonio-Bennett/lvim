@@ -43,7 +43,6 @@ require("lint.selene")
 --LSP
 require("lsp-config.general")
 require("lsp-config.tailwindcss")
-vim.list_extend(lvim.lsp.override, { "rust_analyzer" })
 
 -- Additional Plugins
 lvim.plugins = {
