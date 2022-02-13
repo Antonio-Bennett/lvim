@@ -39,6 +39,4 @@ if project_has_tailwindcss_dependency() == true then
 	}
 
 	require("lvim.lsp.manager").setup("tailwindcss", opts)
-else
-	vim.list_extend(lvim.lsp.override, { "tailwindcss" })
 end

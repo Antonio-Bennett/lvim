@@ -30,13 +30,13 @@ lvim.builtin.treesitter.matchup.enable = true
 require("format.black")
 require("format.clang_format")
 require("format.gofmt")
-require("format.prettierd")
+require("format.prettier")
 require("format.rustfmt")
 require("format.stylua")
 
 --Linters
 require("lint.cppcheck")
-require("lint.eslint_d")
+require("lint.eslint")
 require("lint.flake8")
 require("lint.selene")
 
@@ -53,10 +53,12 @@ lvim.plugins = {
 	require("plugins.vim_matchup"),
 	require("plugins.trouble"),
 	require("plugins.markdown_preview"),
-	require("plugins.hop"),
+	require("plugins.hop_nvim"),
 	require("plugins.octo"),
 	require("plugins.todo_comments"),
 	require("plugins.rust_tools"),
+	require("plugins.fidget"),
+	require("plugins.surround"),
 }
 
 -- WHICH KEY MAPPINGS
@@ -73,7 +75,7 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 
 lvim.builtin.which_key.mappings["c"] = nil
-lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
+lvim.keys.normal_mode["<S-x>"] = ":BufferLinePickClose<CR>"
 
 lvim.builtin.terminal.execs = { { "gitui", "gu", "Git Ui" } }
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
