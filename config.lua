@@ -20,6 +20,7 @@ lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.nvimtree.setup.filters.dotfiles = false
 lvim.builtin.notify.active = true
 lvim.builtin.treesitter.context_commentstring.enable = true
+lvim.builtin.treesitter.autotag = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -30,13 +31,14 @@ lvim.builtin.treesitter.matchup.enable = true
 require("format.black")
 require("format.clang_format")
 require("format.gofmt")
-require("format.prettier")
+require("format.prettierd")
+require("format.rustywind")
 require("format.rustfmt")
 require("format.stylua")
 
 --Linters
 require("lint.cppcheck")
-require("lint.eslint")
+require("lint.eslintd")
 require("lint.flake8")
 require("lint.selene")
 
@@ -53,12 +55,12 @@ lvim.plugins = {
 	require("plugins.vim_matchup"),
 	require("plugins.trouble"),
 	require("plugins.markdown_preview"),
-	require("plugins.hop_nvim"),
 	require("plugins.octo"),
 	require("plugins.todo_comments"),
 	require("plugins.rust_tools"),
 	require("plugins.fidget"),
-	require("plugins.surround"),
+	require("plugins.surround_nvim"),
+	require("plugins.prettier_nvim"),
 }
 
 -- WHICH KEY MAPPINGS

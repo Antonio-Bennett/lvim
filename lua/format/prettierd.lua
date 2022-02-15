@@ -1,5 +1,4 @@
 local formatters = require("lvim.lsp.null-ls.formatters")
-
 formatters.setup({
 	{
 		exe = "prettier",
@@ -16,7 +15,7 @@ formatters.setup({
 			"html",
 			"json",
 			"yaml",
-			-- "markdown",
+			"markdown",
 			"graphql",
 		},
 	},
