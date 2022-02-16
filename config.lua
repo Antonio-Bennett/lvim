@@ -41,6 +41,7 @@ require("lint.cppcheck")
 require("lint.eslintd")
 require("lint.flake8")
 require("lint.selene")
+require("lint.misspell")
 
 --LSP
 require("lsp-config.general")
@@ -77,7 +78,7 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 
 lvim.builtin.which_key.mappings["c"] = nil
-lvim.keys.normal_mode["<S-x>"] = ":BufferLinePickClose<CR>"
+lvim.keys.normal_mode["<S-x>"] = ":BufferKill<CR>"
 
 lvim.builtin.terminal.execs = { { "gitui", "gu", "Git Ui" } }
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
