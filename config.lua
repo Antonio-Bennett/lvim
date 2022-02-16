@@ -41,7 +41,6 @@ require("lint.cppcheck")
 require("lint.eslintd")
 require("lint.flake8")
 require("lint.selene")
-require("lint.misspell")
 
 --LSP
 require("lsp-config.general")
