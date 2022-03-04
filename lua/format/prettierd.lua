@@ -1,3 +1,4 @@
+-- Currently uses regular prettier but keeping this file name so I can eventually iron out prettierd
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{
