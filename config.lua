@@ -13,7 +13,7 @@ lvim.leader = "space"
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.gitsigns.active = true
-lvim.builtin.dashboard.active = true
+lvim.builtin.alpha.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
@@ -41,6 +41,7 @@ require("lint.cppcheck")
 require("lint.eslintd")
 require("lint.flake8")
 require("lint.selene")
+require("lint.stylelint")
 
 --LSP
 require("lsp-config.general")
