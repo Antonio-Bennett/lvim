@@ -23,7 +23,7 @@ lvim.builtin.treesitter.context_commentstring.enable = true
 lvim.builtin.treesitter.autotag = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = "maintained"
+lvim.builtin.treesitter.ensure_installed = "all"
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.treesitter.matchup.enable = true
 
