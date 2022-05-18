@@ -4,9 +4,9 @@ lvim.lsp.diagnostics.virtual_text = true
 -- Overides
 
 --Needed for rust tools
-vim.list_extend(lvim.lsp.override, { "rust_analyzer" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 --Needed for tailwindcss to work
-lvim.lsp.override = vim.tbl_filter(function(name)
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(name)
 	return name ~= "tailwindcss"
-end, lvim.lsp.override)
+end, lvim.lsp.automatic_configuration.skipped_servers)
