@@ -40,3 +40,16 @@ if project_has_tailwindcss_dependency() == true then
 
 	require("lvim.lsp.manager").setup("tailwindcss", opts)
 end
+
+-- local options = {
+-- 	cmd = {
+-- 		-- .. "/lsp_servers/tailwindcss/@tailwindcss/node_modules/language-server/bin/tailwindcss-language-server",
+-- 		-- "tailwindcss-language-server",
+-- 		vim.fn.stdpath("data") .. "/lsp_servers/tailwindcss_npm/node_modules/.bin/tailwindcss-language-server",
+-- 		"--stdio",
+-- 	},
+-- }
+
+-- if project_has_tailwindcss_dependency() == true then
+-- 	require("lvim.lsp.manager").setup("tailwindcss", options)
+-- end
