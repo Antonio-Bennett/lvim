@@ -2,10 +2,10 @@
 
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "tokyonight-storm"
 vim.opt.wrap = true
 vim.opt.timeoutlen = 100
--- lvim.log.level = "debug"
+lvim.log.level = "debug"
 
 -- keymappings
 lvim.leader = "space"
@@ -32,7 +32,6 @@ require("format.black")
 require("format.clang_format")
 require("format.gofmt")
 require("format.prettierd")
-require("format.rustywind")
 require("format.rustfmt")
 require("format.stylua")
 
@@ -40,8 +39,6 @@ require("format.stylua")
 require("lint.cppcheck")
 require("lint.eslintd")
 require("lint.flake8")
-require("lint.selene")
-require("lint.stylelint")
 
 --LSP
 require("lsp-config.general")
