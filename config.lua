@@ -1,11 +1,11 @@
 -- general
 
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight-storm"
 vim.opt.wrap = true
 vim.opt.timeoutlen = 100
-lvim.log.level = "debug"
+lvim.log.level = ""
 
 -- keymappings
 lvim.leader = "space"
@@ -18,7 +18,7 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 -- lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.nvimtree.setup.filters.dotfiles = false
-lvim.builtin.notify.active = true
+lvim.builtin.notify.active = false
 lvim.builtin.treesitter.context_commentstring.enable = true
 lvim.builtin.treesitter.autotag = true
 
@@ -42,11 +42,10 @@ require("lint.flake8")
 
 --LSP
 require("lsp-config.general")
-require("lsp-config.tailwindcss")
+-- require("lsp-config.tailwindcss")
 
 -- Additional Plugins
 lvim.plugins = {
-	require("plugins.tokyo"),
 	require("plugins.lsp_signature"),
 	require("plugins.neoscroll"),
 	require("plugins.colorizer"),
@@ -58,7 +57,7 @@ lvim.plugins = {
 	require("plugins.rust_tools"),
 	require("plugins.fidget"),
 	require("plugins.surround_nvim"),
-	require("plugins.prettier_nvim"),
+	require("plugins.better_escape"),
 }
 
 -- WHICH KEY MAPPINGS
