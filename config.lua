@@ -1,6 +1,6 @@
 -- general
 
-lvim.format_on_save = false
+lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight-storm"
 vim.opt.wrap = true
@@ -18,7 +18,6 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 -- lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.nvimtree.setup.filters.dotfiles = false
-lvim.builtin.notify.active = false
 lvim.builtin.treesitter.context_commentstring.enable = true
 lvim.builtin.treesitter.autotag = true
 
@@ -37,12 +36,11 @@ require("format.stylua")
 
 --Linters
 require("lint.cppcheck")
-require("lint.eslintd")
 require("lint.flake8")
 
 --LSP
 require("lsp-config.general")
--- require("lsp-config.tailwindcss")
+require("lsp-config.eslint")
 
 -- Additional Plugins
 lvim.plugins = {
