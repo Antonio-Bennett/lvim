@@ -1,0 +1,2 @@
+-- Autocommands (https://neovim.io/doc/user/autocmd.html)
+-- lvim.autocommands = {{ "BufWinEnter", "*", "echo \"hi again\""}}

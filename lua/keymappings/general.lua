@@ -1,0 +1,1 @@
+lvim.leader = "space"
