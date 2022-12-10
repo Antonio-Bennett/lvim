@@ -29,6 +29,8 @@ require("format")
 require("lint")
 --LSP
 require("lsp-config")
+--DAP
+require("dap")
 -- Additional Plugins
 require("plugins")
 -- KEY MAPPINGS

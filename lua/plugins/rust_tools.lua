@@ -3,15 +3,18 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyz
 local M = {
 	"simrat39/rust-tools.nvim",
 	-- ft = { "rust", "rs" }, -- IMPORTANT: re-enabling this seems to break inlay-hints
-	config = function()
+	config = pcall(function()
 		require("rust-tools").setup({
 			tools = {
 				executor = require("rust-tools/executors").termopen, -- can be quickfix or termopen
 				reload_workspace_from_cargo_toml = true,
+				runnables = {
+					use_telescope = true,
+				},
 				inlay_hints = {
 					auto = true,
 					only_current_line = false,
-					show_parameter_hints = true,
+					show_parameter_hints = false,
 					parameter_hints_prefix = "<-",
 					other_hints_prefix = "=>",
 					max_len_align = false,
@@ -21,38 +24,42 @@ local M = {
 					highlight = "Comment",
 				},
 				hover_actions = {
-					border = {
-						{ "╭", "FloatBorder" },
-						{ "─", "FloatBorder" },
-						{ "╮", "FloatBorder" },
-						{ "│", "FloatBorder" },
-						{ "╯", "FloatBorder" },
-						{ "─", "FloatBorder" },
-						{ "╰", "FloatBorder" },
-						{ "│", "FloatBorder" },
-					},
-					auto_focus = true,
+					border = "rounded",
 				},
+				on_initialized = function()
+					vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
+						pattern = { "*.rs" },
+						callback = function()
+							local _, _ = pcall(vim.lsp.codelens.refresh)
+						end,
+					})
+				end,
+			},
+			dap = {
+				adapter = require("dap.rust"),
 			},
 			server = {
-				on_init = require("lvim.lsp").common_on_init,
 				on_attach = function(client, bufnr)
 					require("lvim.lsp").common_on_attach(client, bufnr)
 					local rt = require("rust-tools")
-					-- Hover actions
-					vim.keymap.set("n", "<C-space>", ":RustHoverActions<CR>", { buffer = bufnr })
-					-- Code action groups
-					vim.keymap.set("n", "<leader>lA", rt.code_action_group.code_action_group, { buffer = bufnr })
+					vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
 				end,
+
+				capabilities = require("lvim.lsp").common_capabilities(),
 				settings = {
 					["rust-analyzer"] = {
-						lens = { enable = true },
-						checkOnSave = { command = "clippy" },
+						lens = {
+							enable = true,
+						},
+						checkOnSave = {
+							enable = true,
+							command = "clippy",
+						},
 					},
 				},
 			},
 		})
-	end,
+	end),
 }
 
 return M
