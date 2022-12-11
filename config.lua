@@ -30,7 +30,7 @@ require("lint")
 --LSP
 require("lsp-config")
 --DAP
-require("dap")
+require("nvim-dap")
 -- Additional Plugins
 require("plugins")
 -- KEY MAPPINGS
