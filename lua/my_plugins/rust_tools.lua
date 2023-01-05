@@ -36,7 +36,7 @@ local M = {
 				end,
 			},
 			dap = {
-				adapter = require("dap.rust"),
+				adapter = require("nvim-dap.rust"),
 			},
 			server = {
 				on_attach = function(client, bufnr)

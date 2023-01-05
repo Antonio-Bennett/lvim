@@ -4,6 +4,7 @@ lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight-storm"
 vim.opt.wrap = true
 vim.opt.timeoutlen = 100
+vim.opt.clipboard = "unnamedplus"
 lvim.log.level = ""
 
 -- TODO: User Config for predefined plugins
@@ -32,8 +33,8 @@ require("lsp-config")
 --DAP
 require("nvim-dap")
 -- Additional Plugins
-require("plugins")
+require("my_plugins")
 -- KEY MAPPINGS
-require("keymappings")
+require("my_keymappings")
 --Autocommands
 require("autocommands")
